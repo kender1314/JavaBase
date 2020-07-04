@@ -17,7 +17,7 @@ import java.util.List;
  * @Author hejiang
  * @Date 2020/7/3 19:35
  */
-public class StreamDemo {
+public class FilterDemo {
 
     public static void main(String[] args) {
         String contents = null;

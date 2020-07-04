@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @Author hejiang
  * @Date 2020/7/3 20:06
  */
-public class ParallelStreamDemo {
+public class ParallelDemo {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>(5);
         for (int i = 0; i < 6000; i++) {
