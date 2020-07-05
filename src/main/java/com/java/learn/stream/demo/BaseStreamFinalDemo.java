@@ -14,13 +14,15 @@ import java.util.stream.Stream;
  * 3. 更像是一个迭代器，有序获取数据源中的每一个数据，并且对这些数据进行一些操作
  * 4. 流式操作的每一个方法，都是返回流的本身
  * 5. 在流的最终操作中，流在操作之后就已经被关闭了，如果再想对这个流进行操作，需要对流重新实例化
+ *
  * BaseStreamFinalDemo类包含：
  * 1. 流转换成为各种集合collect()
- * 2. 求和sum()
+ * 2. 求和reduce()
  * 3. 寻找最大max()和最小值min()
  * 4. 匹配（anyMatch， allMatch， noneMatch）
  * 5. 求流中的数据总数count()
  * 6. foreach
+ * 7.
  *
  * @Author hejiang
  * @Version 1.0.0 RELEASE

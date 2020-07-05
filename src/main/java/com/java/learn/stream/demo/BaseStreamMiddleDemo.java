@@ -3,7 +3,10 @@ package com.java.learn.stream.demo;
 import com.java.learn.stream.entity.Data;
 import com.java.learn.stream.entity.Person;
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -14,6 +17,7 @@ import java.util.stream.Stream;
  * 3. 排序（sorted）
  * 4. 限制（limit），跳过（skip）
  * 5. 元素映射（map）
+ * 6. 映射（flatMap）
  *
  * @ClassName BaseStreamMiddleDemo
  * @Description TODO
@@ -32,6 +36,8 @@ public class BaseStreamMiddleDemo {
         streamLimitSkip();
         System.out.println("----------------流的相关操作，包括：元素映射（map）----------------------------------\n");
         streamMap();
+        System.out.println("----------------流的相关操作，包括：映射（flatMap）----------------------------------\n");
+        streamFlatMap();
     }
 
     /**
@@ -108,5 +114,19 @@ public class BaseStreamMiddleDemo {
 
         //将成绩大于等于80的，替换成为他们的名字
         s.map(ele -> ele.getScore() >= 80 ? ele.getName() : ele).forEach(System.out::println);
+    }
+
+    /**
+     * 流的相关操作，包括：映射（flatMap）
+     * 映射（flatMap）:将流的数组中的元素取出来，替换原来流中的元素
+     */
+    private static void streamFlatMap() {
+        String[] array = {"hello", "world"};
+
+        //将s流中的字符取出来生成一个新的流
+        List<String> list = Arrays.stream(array).map(ele -> ele.split("")).
+                flatMap(Arrays::stream).
+                collect(Collectors.toList());
+        System.out.println(list);
     }
 }

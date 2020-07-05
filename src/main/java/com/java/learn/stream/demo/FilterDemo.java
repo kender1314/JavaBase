@@ -27,6 +27,8 @@ public class FilterDemo {
             e.printStackTrace();
         }
         List<String> list = Arrays.asList(contents.split("\\PL+"));
+
+        //统计data.txt文件中长度大于12的单词数量
         useFor(list);
         useStream(list);
         useparallelStream(list);
