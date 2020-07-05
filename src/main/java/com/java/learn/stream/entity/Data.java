@@ -22,6 +22,8 @@ public class Data {
         list.add(new Person("xiaoyue", 15, 80));
         list.add(new Person("xiaotang", 16, 40));
         list.add(new Person("xiaowu", 17, 55));
+        list.add(new Person("xiaowu", 17, 55));
+        list.add(new Person("xiaohua", 18, 30));
 
         return list;
     }
