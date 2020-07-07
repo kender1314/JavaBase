@@ -1,4 +1,4 @@
-package com.java.learn.Enum.demo;
+package com.java.learn.enumt.demo;
 
 import netscape.javascript.JSObject;
 
