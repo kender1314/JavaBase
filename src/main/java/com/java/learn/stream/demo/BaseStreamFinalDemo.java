@@ -72,13 +72,13 @@ public class BaseStreamFinalDemo {
 //        System.out.println("List->>>" + streamList);
 
         //将流中的数据转换成为一个Set集合
-//        Set<Person> set = stream.collect(Collectors.toSet());
-//        System.out.println("Set->>>" + set);
+        Set<Person> set = stream.collect(Collectors.toSet());
+        System.out.println("Set->>>" + set);
 
         //将流中的数据转换成为一个Map集合，映射的键值对为（姓名：年龄）
 //        Map<String, Integer> map = stream.collect(Collectors.toMap(ele -> ele.getName(), ele -> ele.getAge()));
-        Map<String, Integer> map = stream.collect(Collectors.toMap(Person::getName, Person::getAge, (n1, n2) -> n1));
-        System.out.println("Map->>>" + map);
+//        Map<String, Integer> map = stream.collect(Collectors.toMap(Person::getName, Person::getAge, (n1, n2) -> n1));
+//        System.out.println("Map->>>" + map);
     }
 
     /**
