@@ -33,17 +33,17 @@ import java.util.stream.Stream;
 public class BaseStreamFinalDemo {
     public static void main(String[] args) {
         streamPrinciple();
-        System.out.println("----------------流转换成为各种集合----------------------------------\n");
+        System.out.println("----------------流转换成为各种集合----------------------------------");
         streamToCollect();
-        System.out.println("----------------流的相关操作，包括：求和----------------------------------\n");
+        System.out.println("----------------流的相关操作，包括：求和----------------------------------");
         streamSum();
-        System.out.println("----------------流的相关操作，包括：寻找最大和最小值----------------------------------\n");
+        System.out.println("----------------流的相关操作，包括：寻找最大和最小值----------------------------------");
         streamMinMax();
-        System.out.println("----------------流的相关操作，包括：匹配（anyMatch， allMatch， noneMatch）----------------------------------\n");
+        System.out.println("----------------流的相关操作，包括：匹配（anyMatch， allMatch， noneMatch）----------------------------------");
         streamMatch();
-        System.out.println("----------------流的相关操作，包括：求流中的数据个数----------------------------------\n");
+        System.out.println("----------------流的相关操作，包括：求流中的数据个数----------------------------------");
         streamCount();
-        System.out.println("----------------流的相关操作，包括：foreach----------------------------------\n");
+        System.out.println("----------------流的相关操作，包括：foreach----------------------------------");
         streamForeach();
     }
 

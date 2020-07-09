@@ -4,7 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-#忽略配置文件设置
+
 ### STS ###
 .apt_generated
 .classpath
@@ -13,10 +13,6 @@ build/
 .settings
 .springBeans
 .sts4-cache
-settings.gradle
-gradlew.bat
-gradlew
-/gradle/
 
 ### IntelliJ IDEA ###
 .idea
