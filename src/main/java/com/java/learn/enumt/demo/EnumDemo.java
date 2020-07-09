@@ -20,9 +20,13 @@ public class EnumDemo {
         Map<EnumTest, Map<String, JSObject>> mapMap = new HashMap<>(5);
         Map<String, JSObject> map = new HashMap<>();
         for (EnumTest enumTest : EnumTest.values()) {
-            EnumTest test = enumTest.setTmp(enumTest.getUrl() + "aaa");
+            EnumTest test = enumTest.setUrl(enumTest.getUrl() + "aaa");
+            System.out.println(test.EE1.getUrl());
+            System.out.println(EnumTest.EE1.getUrl());
+            System.out.println(test.compareTo(EnumTest.EE1));
             mapMap.put(test, map);
         }
+        System.out.println(mapMap);
         List<String> list = mapMap.keySet().stream().map(EnumTest::getTmp).collect(Collectors.toList());
         System.out.println(list);
     }
