@@ -1,5 +1,7 @@
 package com.java.learn.reflection.entity;
 
+import java.util.Date;
+
 /**
  * @Author jiang.he
  * @Version 1.0.0 RELEASE
@@ -12,9 +14,13 @@ public class People {
 
     private Integer age;
 
-    public String interest;
+    public String interestPublic;
 
-    public Integer score;
+    public Integer scorePublic;
+
+    protected Date birthProtected;
+
+    String addressDefault;
 
     public People(String name, Integer age) {
         this.name = name;
@@ -24,20 +30,45 @@ public class People {
     public People() {
     }
 
-    public String getInterest() {
-        return interest;
+    public People(String name, Integer age, String interestPublic, Integer scorePublic, Date birthProtected, String addressDefault) {
+        this.name = name;
+        this.age = age;
+        this.interestPublic = interestPublic;
+        this.scorePublic = scorePublic;
+        this.birthProtected = birthProtected;
+        this.addressDefault = addressDefault;
     }
 
-    public void setInterest(String interest) {
-        this.interest = interest;
+    public String getInterestPublic() {
+        return interestPublic;
     }
 
-    public Integer getScore() {
-        return score;
+    public void setInterestPublic(String interestPublic) {
+        this.interestPublic = interestPublic;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public Integer getScorePublic() {
+        return scorePublic;
+    }
+
+    public void setScorePublic(Integer scorePublic) {
+        this.scorePublic = scorePublic;
+    }
+
+    public Date getBirthProtected() {
+        return birthProtected;
+    }
+
+    public void setBirthProtected(Date birthProtected) {
+        this.birthProtected = birthProtected;
+    }
+
+    public String getAddressDefault() {
+        return addressDefault;
+    }
+
+    public void setAddressDefault(String addressDefault) {
+        this.addressDefault = addressDefault;
     }
 
     public String getName() {
@@ -54,5 +85,17 @@ public class People {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", interestPublic='" + interestPublic + '\'' +
+                ", scorePublic=" + scorePublic +
+                ", birthProtected=" + birthProtected +
+                ", addressDefault='" + addressDefault + '\'' +
+                '}';
     }
 }

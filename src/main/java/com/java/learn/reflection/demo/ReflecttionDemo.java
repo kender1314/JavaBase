@@ -1,8 +1,11 @@
 package com.java.learn.reflection.demo;
 
 import com.java.learn.reflection.entity.People;
+import com.java.learn.stream.entity.Person;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * 反射
@@ -10,6 +13,7 @@ import java.lang.reflect.Field;
  * 2. 根据类对象，获取类中的变量
  * 3. 根据类对象，获取类的构造方法
  * 4. 根据类对象，获取类的成员方法
+ *
  * @Author hejiang
  * @Version 1.0.0 RELEASE
  * @Date 2020/7/6 22:24
@@ -36,7 +40,7 @@ public class ReflecttionDemo {
      * 2. 类名.class：通过类名的属性class获取。（类对象阶段阶段（Class））
      * 3. 实例对象.getClass()：getClass()方法在Object中定义的。（运行时阶段（Runtime））
      */
-    private static void getObject(){
+    private static void getObject() {
         //Class.forName("全类名")
         Class cls1 = null;
         try {
@@ -68,32 +72,43 @@ public class ReflecttionDemo {
      * 反射的相关操作，包括：根据类对象，获取类中的变量
      * 获取成员变量或变量数组
      */
-    private static void showField(){
+    private static void showField() {
+        People people = new People();
+//        people.setInterestPublic("football");
         Class cls = People.class;
 
-        System.out.println("获取类字段数组，只能获取public类型字段->>>");
+        System.out.println("\ngetFields获取类字段数组，只能获取public类型字段->>>\n");
         Field[] fields = cls.getFields();
         for (Field field : fields) {
             System.out.println(field);
         }
 
         try {
-            Field interest = cls.getField("interest");
-            System.out.println("获取指定类字段，只能获取public类型字段->>>" + interest);
-        } catch (NoSuchFieldException e) {
+            Field interest = cls.getField("interestPublic");
+            System.out.println("\ngetField获取指定类字段，只能获取public类型字段->>>\n" + interest);
+            //为interestPublic设置值
+            interest.set(people, "football");
+            Object o = interest.get(people);
+            System.out.println(o);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
         }
 
-        System.out.println("获取类字段数组，获取所有类型字段->>>");
+        System.out.println("\ngetDeclaredFields获取类字段数组，获取所有类型字段，包括private类型->>>");
         Field[] declaredFields = cls.getDeclaredFields();
         for (Field declaredField : declaredFields) {
             System.out.println(declaredField);
         }
 
         try {
-            Field interest = cls.getDeclaredField("name");
-            System.out.println("获取指定类字段，可获取所有类型字段->>>" + interest);
-        } catch (NoSuchFieldException e) {
+            Field name = cls.getDeclaredField("name");
+            System.out.println("\ngetDeclaredField获取指定类字段，可获取所有类型字段->>>\n" + name);
+            //需要设置忽略访问权限修饰符的安全检查
+            name.setAccessible(true);   //暴力反射
+            name.set(people, "hejia");
+            Object o = name.get(people);
+            System.out.println("\ngetDeclaredField获取private字段的值->>>\n" + o);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }
@@ -102,15 +117,25 @@ public class ReflecttionDemo {
      * 反射的相关操作，包括：根据类对象，获取类的构造方法
      * 获取构造方法或构造方法数组
      */
-    private static void showConstructor(){
+    private static void showConstructor() {
+        Class cls = People.class;
 
+        //可以通过类的构造方法getConstructor和Class中的newInstance方法，创建类的实例对象
+        try {
+            Constructor constructor = cls.getConstructor(String.class, Integer.class);
+            assert constructor != null;
+            Object obj = constructor.newInstance("hejina", 22);
+            System.out.println(obj);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 反射的相关操作，包括：根据类对象，获取类的成员方法
      * 获取成员方法或成员方法数组
      */
-    private static void showMethod(){
+    private static void showMethod() {
 
     }
 }
