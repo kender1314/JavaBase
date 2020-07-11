@@ -12,7 +12,7 @@
 
 在java.lang.reflect包中有三个类：Field类、Method类和Constructor类分别描述了一个类的域、方法、构造函数。Field类有一个getType方法，该方法返回一个Class类型的对象，描述域的类型信息。
 
-![image-20200709224657868](https://cdn.jsdelivr.net/gh/kender1314/NotePicture/20200709224737.png)
+![image-20200710232121701](https://cdn.jsdelivr.net/gh/kender1314/NotePicture/20200710232158.png)
 
 
 
@@ -147,7 +147,7 @@ Method getMethod(String name, Class<?>... parameterTypes)
 Method[] getMethods() 
 ```
 
-
+invoke()方法，其实是调用该类的指定方法。
 
 #### 获取类名
 

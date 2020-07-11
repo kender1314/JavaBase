@@ -6,6 +6,7 @@ import com.java.learn.stream.entity.Person;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * 反射
@@ -30,7 +31,7 @@ public class ReflecttionDemo {
         System.out.println("----------------反射的相关操作，包括：根据类对象，获取类的构造方法----------------------------------\n");
         showConstructor();
         System.out.println("----------------反射的相关操作，包括：根据类对象，获取类的成员方法----------------------------------\n");
-        showConstructor();
+        showMethod();
     }
 
     /**
@@ -136,6 +137,24 @@ public class ReflecttionDemo {
      * 获取成员方法或成员方法数组
      */
     private static void showMethod() {
+        Class cls = People.class;
+        People people = new People();
+        try {
+            Method eat1 = cls.getMethod("eat");
+            Method eat2 = cls.getMethod("eat", String.class);
+            System.out.println("调用类中的指定方法->>>");
+            //调用类中的指定方法
+            eat1.invoke(people);
+            eat2.invoke(people, "beef");
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
+        System.out.println("\n获取类中所有方法，获取的还包括其父类的方法->>>");
+        //获取类中所有方法
+        Method[] methods = cls.getMethods();
+        for (Method method : methods) {
+            System.out.println("获取方法名称->>>[" + method + "]---方法名称---[" + method.getName() + "]");
+        }
     }
 }
