@@ -1,7 +1,6 @@
 package com.java.learn.reflection.demo;
 
 import com.java.learn.reflection.entity.People;
-import com.java.learn.stream.entity.Person;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -21,7 +20,7 @@ import java.lang.reflect.Method;
  * @Description:
  */
 
-public class ReflecttionDemo {
+public class ReflectionDemo {
 
     public static void main(String[] args) {
         System.out.println("----------------反射的相关操作，包括：获取类对象----------------------------------\n");
