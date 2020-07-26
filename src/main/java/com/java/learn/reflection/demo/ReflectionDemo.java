@@ -1,12 +1,12 @@
 package com.java.learn.reflection.demo;
 
 import com.java.learn.reflection.entity.People;
-import com.java.learn.stream.entity.Person;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * 反射
@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
  * @Description:
  */
 
-public class ReflecttionDemo {
+public class ReflectionDemo {
 
     public static void main(String[] args) {
         System.out.println("----------------反射的相关操作，包括：获取类对象----------------------------------\n");
@@ -52,7 +52,7 @@ public class ReflecttionDemo {
         System.out.println("全类名->>>" + cls1);
 
         //类名.class
-        Class cls2 = People.class;
+        Class<People> cls2 = People.class;
         System.out.println("类名.class->>>" + cls2);
 
         //实例对象.getClass()
@@ -62,11 +62,12 @@ public class ReflecttionDemo {
 
         //因为针对的都是字节码文件（People.class）,所以指向的都是同一个对象
         //结论：在一次程序运行过程中，同一个字节码文件，只会被加载一次，不管你用什么方式将该类加载进入内存，获取到的Class对象，都是同一个
+        assert cls1 != null;
         System.out.println(cls1.hashCode() == cls2.hashCode());
         System.out.println(cls2.hashCode() == cls3.hashCode());
 
         //获取所有的成员变量
-        System.out.println(cls1.getFields());
+        System.out.println(Arrays.toString(cls1.getFields()));
     }
 
     /**
@@ -76,7 +77,7 @@ public class ReflecttionDemo {
     private static void showField() {
         People people = new People();
 //        people.setInterestPublic("football");
-        Class cls = People.class;
+        Class<People> cls = People.class;
 
         System.out.println("\ngetFields获取类字段数组，只能获取public类型字段->>>\n");
         Field[] fields = cls.getFields();
@@ -119,12 +120,11 @@ public class ReflecttionDemo {
      * 获取构造方法或构造方法数组
      */
     private static void showConstructor() {
-        Class cls = People.class;
+        Class<People> cls = People.class;
 
         //可以通过类的构造方法getConstructor和Class中的newInstance方法，创建类的实例对象
         try {
-            Constructor constructor = cls.getConstructor(String.class, Integer.class);
-            assert constructor != null;
+            Constructor<People> constructor = cls.getConstructor(String.class, Integer.class);
             Object obj = constructor.newInstance("hejina", 22);
             System.out.println(obj);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
@@ -137,7 +137,7 @@ public class ReflecttionDemo {
      * 获取成员方法或成员方法数组
      */
     private static void showMethod() {
-        Class cls = People.class;
+        Class<People> cls = People.class;
         People people = new People();
         try {
             Method eat1 = cls.getMethod("eat");

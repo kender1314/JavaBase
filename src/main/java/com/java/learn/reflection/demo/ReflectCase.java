@@ -1,11 +1,9 @@
 package com.java.learn.reflection.demo;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URL;
 import java.util.Properties;
 
 /**
@@ -25,9 +23,9 @@ public class ReflectCase {
         //类加载中：
         // getResource就是为了获取这个类中reflectCase.properties的路径
         // getResourceAsStream是为了获取reflectCase.properties的字节流
-//        InputStream resourceAsStream = classLoader.getResourceAsStream("reflectCase.properties"); //不知道什么原因，这样写会返回空指针异常
+        InputStream resourceAsStream = classLoader.getResourceAsStream("reflectCase.properties"); //不知道什么原因，这样写会返回空指针异常
         try {
-            InputStream resourceAsStream = new FileInputStream("D:\\ideaIU\\Java-Learn-Space\\JavaBase\\src\\main\\java\\com\\java\\learn\\reflection\\demo\\reflectCase.properties");
+//            InputStream resourceAsStream = new FileInputStream("D:\\ideaIU\\Java-Learn-Space\\JavaBase\\src\\main\\java\\com\\java\\learn\\reflection\\demo\\reflectCase.properties");
 //            InputStream resourceAsStream1 = new FileInputStream("reflectCase.properties");
             properties.load(resourceAsStream);
         } catch (IOException e) {
@@ -54,6 +52,7 @@ public class ReflectCase {
             e.printStackTrace();
         }
         try {
+            assert method != null;
             method.invoke(o);
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
