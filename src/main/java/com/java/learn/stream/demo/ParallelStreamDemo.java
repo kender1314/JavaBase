@@ -3,7 +3,6 @@ package com.java.learn.stream.demo;
 import com.java.learn.stream.entity.Data;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * parallelStream
  * 使用并发处理
  * 将流中的数据分成若干个块，用不同的线程来进行操作
+ * 流的相关操作，包括：findFirst, findAny;
  * @ClassName ParallelStreamDemo
  * @Description TODO
  * @Author hejiang
