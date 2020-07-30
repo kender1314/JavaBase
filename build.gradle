@@ -17,6 +17,8 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+//    compile "net.sf.json-lib:json-lib:2.4:jdk15"
+    compile "com.alibaba:fastjson:1.2.7"
 }
 
 test {
