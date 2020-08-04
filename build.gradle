@@ -47,25 +47,28 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    //    减少set、get、logger创建，根据自己的idea配置
+    compile 'org.projectlombok:lombok:+'
+    annotationProcessor('org.projectlombok:lombok:1.18.12')
 }
 
 test {
     useJUnitPlatform()
 }
 
-//测试任务
-task t1 {
-    println "sssss"
-}
-
-task t2(dependsOn: 't1') {
-//t2执行前的操作
-    doFirst {
-        println "doFirst"
-    }
-    println "do t2"
-//t2执行后的操作
-    doLast {
-        println "doLast"
-    }
-}
+////测试任务
+//task t1 {
+//    println "sssss"
+//}
+//
+//task t2(dependsOn: 't1') {
+////t2执行前的操作
+//    doFirst {
+//        println "doFirst"
+//    }
+//    println "do t2"
+////t2执行后的操作
+//    doLast {
+//        println "doLast"
+//    }
+//}
