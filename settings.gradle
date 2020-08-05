@@ -1,4 +1,4 @@
-rootProject.name = 'learn'
-includeFlat 'Note'
+rootProject.name = 'JavaBase'
+//includeFlat 'Note'
 //includeFlat ':Springboot'
 //includeFlat 'Springboot'
