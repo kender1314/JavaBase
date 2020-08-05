@@ -1,4 +1,4 @@
-package com.java.learn.design.mode.principle.lsp;
+package com.java.learn.design.mode.principle.lsp.entity;
 
 /**
  * 鸟类

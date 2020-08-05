@@ -1,5 +1,9 @@
-package com.java.learn.design.mode.principle.lsp;
+package com.java.learn.design.mode.principle.lsp.demo;
 
+import com.java.learn.design.mode.principle.lsp.entity.Bird;
+import com.java.learn.design.mode.principle.lsp.entity.BrownKiwi;
+import com.java.learn.design.mode.principle.lsp.entity.Swallow;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,8 +23,8 @@ import org.slf4j.LoggerFactory;
  * @Date 2020/7/11 20:12
  * @Description:
  */
+@Slf4j
 public class LSPDemo {
-    private static Logger logger = LoggerFactory.getLogger(LSPDemo.class);
 
     public static void main(String[] args) {
         Bird swallow = new Swallow();
@@ -35,7 +39,7 @@ public class LSPDemo {
             System.out.println("燕子飞了" + time2 + "小时");
             System.out.println("几维鸟飞了" + time1 + "小时");
         } catch (Exception e) {
-            logger.info("发生错误了!");
+            log.info("发生错误了!");
         }
     }
 }

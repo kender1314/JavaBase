@@ -1,7 +1,7 @@
-package com.java.learn.design.mode.principle.dip;
+package com.java.learn.design.mode.principle.dip.entity;
 
 /**
- * ÉØ¹ØÍøµê
+ * éŸ¶å…³ç½‘åº—
  *
  * @Author jiang.he
  * @Version 1.0.0 RELEASE
@@ -11,6 +11,6 @@ package com.java.learn.design.mode.principle.dip;
 public class ShaoguanShop implements Shop{
     @Override
     public String sell() {
-        return "ÉØ¹ØÍÁÌØ²ú£ºÏã¹½¡¢Ä¾¶ú¡­¡­";
+        return "éŸ¶å…³åœŸç‰¹äº§ï¼šé¦™è‡ã€æœ¨è€³â€¦â€¦";
     }
 }

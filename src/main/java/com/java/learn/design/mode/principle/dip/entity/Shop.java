@@ -1,7 +1,7 @@
-package com.java.learn.design.mode.principle.dip;
+package com.java.learn.design.mode.principle.dip.entity;
 
 /**
- * �̵�ӿ�
+ * 商店接口
  *
  * @Author jiang.he
  * @Version 1.0.0 RELEASE
