@@ -50,6 +50,7 @@ dependencies {
     //    减少set、get、logger创建，根据自己的idea配置
     compile 'org.projectlombok:lombok:+'
     annotationProcessor('org.projectlombok:lombok:1.18.12')
+    compile 'com.alibaba:fastjson:1.2.7'
 }
 
 test {
