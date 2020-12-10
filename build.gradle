@@ -51,6 +51,8 @@ dependencies {
     compile 'org.projectlombok:lombok:+'
     annotationProcessor('org.projectlombok:lombok:1.18.12')
     compile 'com.alibaba:fastjson:1.2.7'
+    compile 'net.java.dev.jna:jna-platform:4.2.2'
+    compile("commons-net:commons-net:3.6")
 }
 
 test {

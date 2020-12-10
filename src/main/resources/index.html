@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body id="body">
+
+<script>
+    async function ping(ip){
+        let pingPromise = new Promise((resolve,reject) => {
+            var img = new Image();
+            var start = new Date().getTime();
+            img.src = "http://" + ip + "?t=" + start;
+            img.onload = function(){
+                resolve(true);
+            };
+            img.onerror = function(){
+                resolve(true);
+            };
+            var timer = setTimeout(function(){
+                reject(false);
+            },1500);
+        })
+        let flag = await pingPromise;
+        console.log(flag);
+    }
+    let promise = ping('www.baidu.com');
+</script>
+</body>
+
+</html>

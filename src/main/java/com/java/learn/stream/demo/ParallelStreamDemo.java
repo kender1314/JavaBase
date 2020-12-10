@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 适用parallelStream之前须知：parallelStream并不是线程安全的，parallelStream可能会引起ArrayIndexOutOfBoundsException问题
+ *
  * parallelStream
  * 使用并发处理
  * 将流中的数据分成若干个块，用不同的线程来进行操作
  * 流的相关操作，包括：findFirst, findAny;
- * @ClassName ParallelStreamDemo
+ * @ClassName ParallelStreamDemo ParallelStreamDemo
  * @Description TODO
  * @Author hejiang
  * @Date 2020/7/3 20:06
