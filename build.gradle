@@ -53,6 +53,8 @@ dependencies {
     compile 'com.alibaba:fastjson:1.2.7'
     compile 'net.java.dev.jna:jna-platform:4.2.2'
     compile("commons-net:commons-net:3.6")
+    compile('net.jradius:jradius:1.1.5')
+    compile('net.jradius:jradius-dictionary:1.1.5')
 }
 
 test {
