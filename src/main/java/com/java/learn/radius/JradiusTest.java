@@ -15,6 +15,8 @@ import java.net.InetAddress;
 
 
 /**
+ * Radius客户端，用于用户认证
+ *
  * @author Administrator
  */
 public class JradiusTest {
