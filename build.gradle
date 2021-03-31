@@ -1,14 +1,10 @@
-import javafx.concurrent.Task
-buildscript {
-    repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
-    }
-    dependencies {
-//        classpath 'com.android.tools.build:gradle:3.3.0-alpha13'
-        classpath "gradle.plugin.org.akhikhl.gretty:gretty:2.0.0"
-    }
-}
+//import javafx.concurrent.Task
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.akhikhl.gretty'
 /**
  * gretty核心特性
  * 1. 配置servlet 容器
@@ -20,11 +16,27 @@ buildscript {
  * 7. 调试（Debug）,可以为debug设置转发专用端口
  * 8. 产品生成（包含build）
  */
-plugins {
-    id 'org.springframework.boot' version '2.3.1.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id 'java'
-    id 'org.akhikhl.gretty' version "2.0.0"
+
+group = 'com.ql'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+buildscript {
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.0")
+        classpath("org.akhikhl.gretty:gretty:+")
+    }
+}
+
+allprojects {
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    }
 }
 
 allprojects {
