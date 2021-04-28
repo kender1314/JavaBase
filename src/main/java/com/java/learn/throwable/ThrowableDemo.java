@@ -1,5 +1,7 @@
 package com.java.learn.throwable;
 
+import java.io.IOException;
+
 /**
  * 获取方法执行的堆栈信息
  *
@@ -10,10 +12,24 @@ package com.java.learn.throwable;
 public class ThrowableDemo {
 
     public static void main(String[] args) {
-        Throwable throwable = new Throwable();
-        StackTraceElement[] stackTrace = throwable.getStackTrace();
-        String className = stackTrace[0].getClassName();
-        System.out.println(className);
+//        Throwable throwable = new Throwable();
+//        StackTraceElement[] stackTrace = throwable.getStackTrace();
+//        String className = stackTrace[0].getClassName();
+//        System.out.println(className);
+        System.out.println(inc());
+    }
 
+    public static int inc() {
+        int x;
+        try {
+            int i = 1 / 0;
+            x = 1;
+            return x;
+        } catch (Exception e) {
+            x = 2;
+            return x;
+        } finally {
+            x = 3;
+        }
     }
 }

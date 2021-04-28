@@ -67,6 +67,7 @@ dependencies {
     compile("commons-net:commons-net:3.6")
     compile('net.jradius:jradius:1.1.5')
     compile('net.jradius:jradius-dictionary:1.1.5')
+    compile('commons-lang:commons-lang:2.6')
 }
 
 test {

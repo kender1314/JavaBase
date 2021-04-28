@@ -1,5 +1,7 @@
 package com.java.learn.ip.ipv6;
 
+import java.math.BigInteger;
+
 /**
  * @Author jiang.he
  * @Version 1.0.0 RELEASE
@@ -7,8 +9,22 @@ package com.java.learn.ip.ipv6;
  */
 public class ByteAndHex {
 
+//    public static void main(String[] args) {
+////        byte b = (byte)Integer.parseInt("FF",16);
+////        long w = 6300;
+////        BigInteger a = BigInteger.valueOf(w);
+////        System.out.println(a.not());
+//        System.out.println(hexToByteArray("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"));
+//    }
+
+    private static int c = 0;
     public static void main(String[] args) {
-        System.out.println(hexToByteArray("FFFFFFFF"));
+        int a = 1;
+        System.out.println(add(a, c));
+    }
+
+    private static int add(int a, int b){
+        return a + b;
     }
 
     /**

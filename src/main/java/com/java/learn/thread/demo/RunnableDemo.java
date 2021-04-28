@@ -5,7 +5,7 @@ package com.java.learn.thread.demo;
  * @Version 1.0.0 RELEASE
  * @Date 2021/2/26 10:54
  */
-public class RunnableDemo implements Runnable{
+public class    RunnableDemo implements Runnable{
     @Override
     public void run() {
         System.out.println("Runnable start...");
