@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class ThrowableDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        Throwable throwable = new Throwable();
 //        StackTraceElement[] stackTrace = throwable.getStackTrace();
 //        String className = stackTrace[0].getClassName();
@@ -19,17 +19,18 @@ public class ThrowableDemo {
         System.out.println(inc());
     }
 
-    public static int inc() {
+    public static int inc() throws Exception {
         int x;
         try {
-            int i = 1 / 0;
+            int i = 1/0;
             x = 1;
             return x;
-        } catch (Exception e) {
-            x = 2;
+        } catch (Exception e){
+            x = 5;
             return x;
         } finally {
             x = 3;
+            throw new Exception();
         }
     }
 }
